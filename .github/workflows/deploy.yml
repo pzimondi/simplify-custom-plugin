@@ -1,0 +1,25 @@
+name: Deploy Plugin to Sandbox
+
+on:
+  push:
+    branches:
+      - main          # when you push/merge to main
+    tags:
+      - 'deploy-*'    # when you push a tag like deploy-1.0.0
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./   # root of your plugin repo
+          server-dir: /public_html/wp-content/plugins/simplify-custom-plugin/

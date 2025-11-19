@@ -1,0 +1,23 @@
+/* Simplify Custom Plugin Styles */
+body {
+    background-color: #f8fafc;
+    font-family: "Poppins", sans-serif;
+}
+
+h2, h3 {
+    color: #0073aa;
+}
+
+button, input[type="submit"] {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #005f8a;
+}
