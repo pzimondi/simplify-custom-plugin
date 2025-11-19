@@ -3,7 +3,7 @@ name: Deploy Plugin to Sandbox
 on:
   push:
     branches:
-      - main        # Your repository uses MAIN branch
+      - master
 
 jobs:
   deploy:
